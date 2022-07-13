@@ -8,11 +8,6 @@ resource "helm_release" "argocd" {
   values           = [file("${path.module}/argocd-vault-plugin.yaml")]
   timeout          = 800
 
-  set_sensitive {
-    name  = "configs.secret.argocdServerAdminPassword"
-    value = var.admin_password
-  }
-
   set {
     name  = "server.extraArgs"
     value = var.insecure == false ? "" : "{--insecure}"

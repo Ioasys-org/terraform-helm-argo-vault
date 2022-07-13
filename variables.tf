@@ -1,10 +1,3 @@
-variable "admin_password" {
-  description = "ArgoCD admin password"
-  type        = string
-  sensitive   = true
-  default     = "admin"
-}
-
 variable "enable_dex" {
   type        = bool
   description = "Enabled the dex server?"
